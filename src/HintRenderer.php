@@ -21,7 +21,7 @@ final class HintRenderer implements NodeRendererInterface
         Hint::assertInstanceOf($node);
 
         $attrs = $node->data->get('attributes');
-        isset($attrs['class']) ? $attrs['class'] .= ' hint' : $attrs['class'] = 'hint';
+        isset($attrs['class']) ? $attrs['class'] .= ' hint not-prose' : $attrs['class'] = 'hint not-prose';
 
         if ($type = $node->getType()) {
             $attrs['class'] = isset($attrs['class']) ? $attrs['class'] . ' ' : '';
@@ -31,14 +31,14 @@ final class HintRenderer implements NodeRendererInterface
         $title = $node->getTitle();
         $title = $title
             ? new HtmlElement(
-                'h2',
+                'span',
                 ['class' => 'hint-title'],
                 $title,
             )
             : '';
 
         $content = new HtmlElement(
-            'p',
+            'div',
             ['class' => 'hint-content'],
             $childRenderer->renderNodes($node->children())
         );

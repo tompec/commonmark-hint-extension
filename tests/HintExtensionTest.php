@@ -29,9 +29,9 @@ This is how the **Markdown** looks.
 MARKDOWN;
 
         $this->assertEquals((string) $converter->convertToHtml($markdown), <<<HTML
-<div class="hint important">
-<h2 class="hint-title">Warning!</h2>
-<p class="hint-content">This is how the <strong>Markdown</strong> looks.</p>
+<div class="hint not-prose important">
+<span class="hint-title">Warning!</span>
+<div class="hint-content">This is how the <strong>Markdown</strong> looks.</div>
 </div>
 
 HTML);
@@ -59,9 +59,9 @@ MARKDOWN;
 
         $this->assertEquals((string) $converter->convertToHtml($markdown), <<<HTML
 <h1>Test</h1>
-<div class="hint important">
-<h2 class="hint-title">Warning!</h2>
-<p class="hint-content">This is how the <strong>Markdown</strong> looks.</p>
+<div class="hint not-prose important">
+<span class="hint-title">Warning!</span>
+<div class="hint-content">This is how the <strong>Markdown</strong> looks.</div>
 </div>
 
 HTML);
@@ -88,9 +88,9 @@ Test
 MARKDOWN;
 
         $this->assertEquals((string) $converter->convertToHtml($markdown), <<<HTML
-<div class="hint important">
-<h2 class="hint-title">Warning!</h2>
-<p class="hint-content">This is how the <strong>Markdown</strong> looks.</p>
+<div class="hint not-prose important">
+<span class="hint-title">Warning!</span>
+<div class="hint-content">This is how the <strong>Markdown</strong> looks.</div>
 </div>
 <p>Test</p>
 
